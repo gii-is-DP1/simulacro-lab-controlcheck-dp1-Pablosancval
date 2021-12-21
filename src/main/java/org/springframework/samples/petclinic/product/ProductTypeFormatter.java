@@ -9,6 +9,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class ProductTypeFormatter implements Formatter<ProductType>{
 
+
     @Override
     public String print(ProductType object, Locale locale) {
         // TODO Auto-generated method stub
