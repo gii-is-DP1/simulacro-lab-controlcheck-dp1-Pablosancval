@@ -14,6 +14,10 @@ public class ProductService {
         return productRepository.findAll();
     }
 
+    public List<ProductType> getAllProductTypes(){
+        return productRepository.findAllProductTypes();
+    }
+
     public List<Product> getProductsCheaperThan(double price) {
         return null;
     }
