@@ -20,6 +20,9 @@ public interface ProductRepository extends CrudRepository<Product, Integer>{
     @Query("SELECT prodtype FROM productTypes WHERE prodtype.name LIKE :name%")
     ProductType findProductTypeByName(@Param("name") String name) throws DataAccessException;
 
+    @Query("SELECT prod FROM products WHERE prod.price <= :price%")
+    List<Product> findByPriceLessThan(@Param("price") Double price) throws DataAccessException;
+
     Optional<Product> findById(int id);
 
     Product findByName(String name);

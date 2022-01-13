@@ -18,8 +18,8 @@ public class ProductService {
         return productRepository.findAllProductTypes();
     }
 
-    public List<Product> getProductsCheaperThan(double price) {
-        return null;
+    public List<Product> getProductsCheaperThan(Double price) {
+        return productRepository.findByPriceLessThan(price);
     }
 
     public ProductType getProductType(String typeName) {
