@@ -13,7 +13,7 @@ public interface ProductRepository extends CrudRepository<Product, Integer>{
 
     List<Product> findAll();
     
-	@Query("SELECT prodtype FROM ProductType prodtype ORDER BY prodtype.name")
+	@Query("SELECT prodtype FROM productTypes prodtype ORDER BY prodtype.name")
     List<ProductType> findAllProductTypes() throws DataAccessException;
 
     Optional<Product> findById(int id);

@@ -13,7 +13,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name = "Products")
+@Table(name = "products")
 public class Product extends NamedEntity{
 
     @Min(0)
