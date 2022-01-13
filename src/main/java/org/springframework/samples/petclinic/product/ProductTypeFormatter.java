@@ -4,13 +4,16 @@ import java.text.ParseException;
 import java.util.Collection;
 import java.util.Locale;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.Formatter;
 import org.springframework.stereotype.Component;
 
 @Component
 public class ProductTypeFormatter implements Formatter<ProductType>{
 
+    @Autowired
     private ProductService productService;
+
     @Override
     public String print(ProductType object, Locale locale) {
         return object.getName();

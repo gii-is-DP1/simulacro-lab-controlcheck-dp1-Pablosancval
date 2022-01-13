@@ -14,13 +14,13 @@ public interface ProductRepository extends CrudRepository<Product, Integer>{
 
     List<Product> findAll();
     
-	@Query("SELECT prodtype FROM productTypes prodtype ORDER BY prodtype.name")
+	@Query("SELECT prodtype FROM ProductType prodtype")
     List<ProductType> findAllProductTypes() throws DataAccessException;
 
-    @Query("SELECT prodtype FROM productTypes WHERE prodtype.name LIKE :name%")
+    @Query("SELECT prodtype FROM ProductType prodtype WHERE prodtype.name LIKE :name%")
     ProductType findProductTypeByName(@Param("name") String name) throws DataAccessException;
 
-    @Query("SELECT prod FROM products WHERE prod.price <= :price%")
+    @Query("SELECT prod FROM Product prod WHERE prod.price <= :price")
     List<Product> findByPriceLessThan(@Param("price") Double price) throws DataAccessException;
 
     Optional<Product> findById(int id);
